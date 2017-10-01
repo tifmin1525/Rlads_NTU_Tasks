@@ -129,11 +129,21 @@ rnorm是一個在常態分配下的亂數產生器，rnorm(n, 0, 1)可以在標�
 # your code goes here
 draw <- c (10, 100, 500, 1000, 5000)
 abs_mean <- NULL
+mean <- NULL
 for(i in 1:length(draw)){
-  abs_mean[i] <- abs(mean(rnorm(draw[i], 0, 1)))
-  
+  mean[i] <- mean(rnorm(draw[i], 0, 1))
+  abs_mean[i] <- abs(mean[i])
 }
 plot(draw, abs_mean, type = "b", xlab = "N", ylab = "abs_mean")
+print("平均數 = ")
+print(mean)
+print("平均數的絕對值 = ")
+print(abs_mean)
+
 ```
+
+
+
+
 
 
